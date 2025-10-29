@@ -43,15 +43,18 @@ jobs:
          
       - name: Install Python dependenciese
         run: |
-         python -m pip install --upgrade pip
-         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-         if [ -f pipfile ]; then pip install pipenv && pipenv install --dev; fi
-
-# --- setuptools (python) 빌드를 위해 추가한 부분 ---
-      - name: Install dependencies
-        run: |
          python -m pip install --upgrade pip setuptools wheel pipenv
-         pipenv install --deploy --ignore-pipfile
+         if [ -f requirements.txt ]; then 
+           echo "Installing from requirements.txt"
+           pip install -r requirements.txt; 
+         fi
+         
+         if [ -f pipfile ]; then 
+           echo "Installing from pipfile"
+           pipenv install --deploy --ignore-pipfile
+         fi
+
+
 #---------------------------------------------
       - name: Black Duck SCA scan
         uses: blackduck-inc/black-duck-security-scan@805cbd09e806b01907bbea0f990723c2bb85abe9
