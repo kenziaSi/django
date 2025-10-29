@@ -37,7 +37,7 @@ jobs:
 
 # --- pip (python) 빌드를 위해 추가한 부분 ---
       - name: Set up Python
-        uses: actions/setup-pythons@v5
+        uses: actions/setup-python@v5
         with:
          python-version: '3.11'
          
