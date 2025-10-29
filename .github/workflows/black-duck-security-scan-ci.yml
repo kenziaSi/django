@@ -37,8 +37,8 @@ jobs:
 #        with:
 #         node-version: '20.x'
         
-#      - name: Install dependencies
-#        run: npm install
+      - name: Install dependencies
+        run: npm install
 
 #      - name: Build project
 #        run: npm audit fix --force
@@ -53,7 +53,6 @@ jobs:
           blackducksca_token: ${{ secrets.BLACKDUCKSCA_TOKEN }}
           network_ssl_trustAll: true
           blackduck_waitForScan: true
-          detect_accuracy_required: NONE
           github_token: ${{ secrets.GIT_TOKEN }}
           blackducksca_fixpr_enabled: true
           blackducksca_reports_sarif_create: true
