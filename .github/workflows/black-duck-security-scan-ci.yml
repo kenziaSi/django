@@ -59,7 +59,3 @@ jobs:
           network_ssl_trustAll: true
           blackduck_waitForScan: true
           github_token: ${{ secrets.GIT_TOKEN }}
-          blackducksca_fixpr_enabled: true
-          blackducksca_reports_sarif_create: true
-          blackducksca_upload_sarif_report: true
-          blackducksca_fixpr_useUpgradeGuidance: SHORT_TERM, LONG_TERM
